@@ -8,7 +8,7 @@ const Home = () => {
         Our <span className="text-red-500">Menu</span>
       </h2>
       <div className="flex justify-center items-center">
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-2 gap-5 p-2">
           {Data.map((item) => {
             return <Card key={item.id} item={item} />;
           })}
