@@ -7,6 +7,9 @@ const Navbar = () => {
       </div>
       <div>
         <button className="p-2 mx-2 rounded-md bg-white hover:bg-red-500 border hover:text-white">
+          Home
+        </button>
+        <button className="p-2 mx-2 rounded-md bg-white hover:bg-red-500 border hover:text-white">
           Cart
         </button>
         <button className="p-2 mx-2 rounded-md bg-white hover:bg-red-500 border hover:text-white">
