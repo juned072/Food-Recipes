@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
+  const location = useLocation();
   return (
     <nav className="flex justify-between items-center p-4 shadow-md">
       <div>
@@ -10,17 +11,35 @@ const Navbar = () => {
       </div>
       <div>
         <Link to={"/"}>
-          <button className="p-2 mx-2 rounded-md bg-white hover:bg-red-500 border hover:text-white">
+          <button
+            className={`${
+              location.pathname === "/"
+                ? "bg-red-500 text-white"
+                : "bg-white hover:bg-red-500 hover:text-white"
+            } p-2 mx-2 rounded-md border`}
+          >
             Home
           </button>
         </Link>
         <Link to={"/wishlist"}>
-          <button className="p-2 mx-2 rounded-md bg-white hover:bg-red-500 border hover:text-white">
+          <button
+            className={`${
+              location.pathname === "/wishlist"
+                ? "bg-red-500 text-white"
+                : "bg-white hover:bg-red-500 hover:text-white"
+            } p-2 mx-2 rounded-md border`}
+          >
             Wishlist
           </button>
         </Link>
         <Link to={"/cart"}>
-          <button className="p-2 mx-2 rounded-md bg-white hover:bg-red-500 border hover:text-white">
+          <button
+            className={`${
+              location.pathname === "/cart"
+                ? "bg-red-500 text-white"
+                : "bg-white hover:bg-red-500 hover:text-white"
+            } p-2 mx-2 rounded-md border`}
+          >
             Cart
           </button>
         </Link>
