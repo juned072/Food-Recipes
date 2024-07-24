@@ -12,7 +12,12 @@ const Card = ({ item }) => {
             ${item.price}
           </span>
         </div>
-        <p className="mt-1 text-gray-700">{item.description}</p>
+        <p className="mt-1 text-gray-500">
+          {item.description.slice(0, 90)}
+          <span className="text-red-400 hover:text-red-600 cursor-pointer ml-1">
+            Read more...
+          </span>
+        </p>
         <button className="bg-red-500 hover:bg-red-600 text-white p-3 rounded-md w-full mt-1">
           Add to Cart
         </button>
