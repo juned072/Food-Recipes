@@ -1,15 +1,18 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { CiShoppingCart, CiHeart } from "react-icons/ci";
 const Navbar = () => {
   const location = useLocation();
   return (
     <nav className="flex justify-between items-center p-4 shadow-md">
       <div>
         <Link to={"/"}>
-          <h1 className="text-3xl font-bold text-slate-800">Food Recipes</h1>
+          <h1 className="md:text-3xl text-2xl font-bold text-slate-800">
+            Food Recipes
+          </h1>
         </Link>
       </div>
-      <div>
+      <div className="md:block hidden">
         <Link to={"/"}>
           <button
             className={`${
@@ -43,6 +46,14 @@ const Navbar = () => {
             Cart
           </button>
         </Link>
+      </div>
+      <div className="md:hidden block">
+        <button className="mr-2 text-2xl">
+          <CiHeart />
+        </button>
+        <button className="text-2xl">
+          <CiShoppingCart />
+        </button>
       </div>
     </nav>
   );
