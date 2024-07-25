@@ -53,10 +53,15 @@ const Navbar = () => {
             <CiHeart />
           </button>
         </Link>
-        <Link to={"/cart"}>
-          <button className="text-2xl">
+        <Link to={"/cart"} className="relative">
+          <button className="text-2xl mr-2 ">
             <CiShoppingCart />
           </button>
+          <div className="absolute bottom-5 left-5 ">
+            <p className="bg-red-500 text-white text-sm rounded-full w-5 h-5 text-center">
+              0
+            </p>
+          </div>
         </Link>
       </div>
     </nav>
