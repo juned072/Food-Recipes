@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContextApi } from "../context/ContextApi";
 
 const Card = ({ item }) => {
+  const { addToCart } = useContext(ContextApi);
   return (
     <div className="rounded-md overflow-hidden shadow-md bg-white">
       <img src={item.image} className="w-full h-40 object-cover" />
@@ -18,7 +20,10 @@ const Card = ({ item }) => {
             Read more...
           </span>
         </p>
-        <button className="bg-red-500 hover:bg-red-600 text-white p-1 rounded-md w-full mt-1">
+        <button
+          onClick={() => addToCart(item.id)}
+          className="bg-red-500 hover:bg-red-600 text-white p-1 rounded-md w-full mt-1"
+        >
           Add to Cart
         </button>
       </div>
