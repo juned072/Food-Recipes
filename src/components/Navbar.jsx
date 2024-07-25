@@ -61,7 +61,7 @@ const Navbar = () => {
           </button>
           {cart.length > 0 && (
             <div className="absolute bottom-5 left-5 ">
-              <p className="bg-red-500 text-white text-sm rounded-full w-5 h-5 text-center">
+              <p className="bg-red-500 text-white text-[12px] rounded-full w-5 h-5 text-center">
                 {cart.length}
               </p>
             </div>
