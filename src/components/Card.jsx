@@ -5,7 +5,11 @@ const Card = ({ item }) => {
   const { addToCart } = useContext(ContextApi);
   return (
     <div className="rounded-md overflow-hidden shadow-md bg-white">
-      <img src={item.image} className="w-full h-40 object-cover" />
+      <img
+        src={item.image}
+        alt={item.title}
+        className="w-full h-40 object-cover"
+      />
       <div className="p-2">
         <h3 className="text-lg text-gray-800 font-semibold">{item.title}</h3>
         <div className="flex justify-between items-center">
@@ -21,7 +25,7 @@ const Card = ({ item }) => {
           </span>
         </p>
         <button
-          onClick={() => addToCart(item.id)}
+          onClick={() => addToCart(item)}
           className="bg-red-500 hover:bg-red-600 text-white p-1 rounded-md w-full mt-1"
         >
           Add to Cart
