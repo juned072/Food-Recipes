@@ -1,7 +1,13 @@
 import React from "react";
 
 const Recommended = () => {
-  return <div>Recommended</div>;
+  return (
+    <div>
+      <button>All</button>
+      <button>Veg</button>
+      <button>Non-veg</button>
+    </div>
+  );
 };
 
 export default Recommended;

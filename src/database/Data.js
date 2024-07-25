@@ -57,7 +57,7 @@ const Data = [
     },
     {
         "id": 9,
-        "title": "Four Seasons Pizza",
+        "title": "Four Seasons Pizzaata fi",
         "image": "https://img.freepik.com/free-photo/italian-food-composition-with-pizza-middle_23-2147686548.jpg?t=st=1721880704~exp=1721884304~hmac=37e47fe89fab76b84cf5d84dfe04b61b7f58ff663a4c249800232d11450c5228&w=740",
         "rating": "⭐⭐⭐⭐",
         "price": 12,
