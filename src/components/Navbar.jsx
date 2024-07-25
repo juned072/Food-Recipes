@@ -48,12 +48,16 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="md:hidden block">
-        <button className="mr-2 text-2xl">
-          <CiHeart />
-        </button>
-        <button className="text-2xl">
-          <CiShoppingCart />
-        </button>
+        <Link to={"/wishlist"}>
+          <button className="mr-2 text-2xl">
+            <CiHeart />
+          </button>
+        </Link>
+        <Link to={"/cart"}>
+          <button className="text-2xl">
+            <CiShoppingCart />
+          </button>
+        </Link>
       </div>
     </nav>
   );
