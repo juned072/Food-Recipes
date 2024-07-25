@@ -14,8 +14,8 @@ const Home = () => {
   });
 
   return (
-    <div className="max-w-screen-lg mx-auto my-5">
-      <h2 className="text-center font-bold text-3xl my-8">
+    <div className="max-w-screen-lg mx-auto md:my-5">
+      <h2 className="text-center font-bold md:text-3xl text-2xl md:my-8 my-4">
         Our <span className="text-red-500">Menu</span>
       </h2>
       <div className="p-2">
