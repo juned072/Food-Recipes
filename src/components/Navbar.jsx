@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CiShoppingCart, CiHeart } from "react-icons/ci";
+import { ContextApi } from "../context/ContextApi";
 const Navbar = () => {
+  const { cart } = useContext(ContextApi);
   const location = useLocation();
   return (
     <nav className="flex justify-between items-center p-4 shadow-md">
@@ -57,11 +59,13 @@ const Navbar = () => {
           <button className="text-2xl mr-2 ">
             <CiShoppingCart />
           </button>
-          <div className="absolute bottom-5 left-5 ">
-            <p className="bg-red-500 text-white text-sm rounded-full w-5 h-5 text-center">
-              0
-            </p>
-          </div>
+          {cart.length > 0 && (
+            <div className="absolute bottom-5 left-5 ">
+              <p className="bg-red-500 text-white text-sm rounded-full w-5 h-5 text-center">
+                {cart.length}
+              </p>
+            </div>
+          )}
         </Link>
       </div>
     </nav>
