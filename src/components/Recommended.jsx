@@ -1,23 +1,35 @@
 import React from "react";
 
-const Recommended = ({ setFilter }) => {
+const Recommended = ({ setFilter, filter }) => {
   return (
     <div>
       <button
         onClick={() => setFilter("All")}
-        className="p-2 mx-2 rounded-md border hover:bg-red-500 hover:text-white"
+        className={`${
+          filter === "All"
+            ? "bg-red-500 text-white"
+            : "hover:bg-red-500 hover:text-white"
+        } p-2 mx-2 rounded-md border`}
       >
         All
       </button>
       <button
         onClick={() => setFilter("veg")}
-        className="p-2 mx-2 rounded-md border hover:bg-red-500 hover:text-white"
+        className={`${
+          filter === "veg"
+            ? "bg-red-500 text-white"
+            : "hover:bg-red-500 hover:text-white"
+        } p-2 mx-2 rounded-md border`}
       >
         Veg
       </button>
       <button
         onClick={() => setFilter("non-veg")}
-        className="p-2 mx-2 rounded-md border hover:bg-red-500 hover:text-white"
+        className={`${
+          filter === "non-veg"
+            ? "bg-red-500 text-white"
+            : "hover:bg-red-500 hover:text-white"
+        } p-2 mx-2 rounded-md border`}
       >
         Non-veg
       </button>

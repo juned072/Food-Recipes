@@ -19,7 +19,7 @@ const Home = () => {
         Our <span className="text-red-500">Menu</span>
       </h2>
       <div className="p-2">
-        <Recommended setFilter={setFilter} />
+        <Recommended filter={filter} setFilter={setFilter} />
       </div>
       <div className="flex justify-center items-center">
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-2 gap-5 p-2">
