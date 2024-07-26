@@ -5,7 +5,7 @@ import { ContextApi } from "../context/ContextApi";
 import pageIcon from "../assets/pageIcon.png";
 
 const Navbar = () => {
-  const { cart } = useContext(ContextApi);
+  const { cart, wishlist } = useContext(ContextApi);
   const location = useLocation();
   return (
     <nav className="flex justify-between items-center p-4 shadow-md">
@@ -53,10 +53,17 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="md:hidden block">
-        <Link to={"/wishlist"}>
+        <Link to={"/wishlist"} className="relative">
           <button className="mr-4 text-3xl ">
             <CiHeart />
           </button>
+          {wishlist.length > 0 && (
+            <div className="absolute bottom-5 left-5 ">
+              <p className="bg-red-500 text-white text-[12px] rounded-full w-5 h-5 text-center">
+                {wishlist.length}
+              </p>
+            </div>
+          )}
         </Link>
         <Link to={"/cart"} className="relative">
           <button className="text-3xl ">
