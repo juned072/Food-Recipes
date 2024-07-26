@@ -5,7 +5,7 @@ import { ContextApi } from "../context/ContextApi";
 import { Link } from "react-router-dom";
 
 const Wishlist = () => {
-  const { wishlist } = useContext(ContextApi);
+  const { wishlist, wishlistToCart } = useContext(ContextApi);
   return (
     <div className="max-w-screen-lg min-h-[80vh] mx-auto my-5 shadow-md rounded-md p-2 ">
       <div className="bg-red-500 hover:bg-red-600 w-8 h-8 flex items-center justify-center rounded-full">
@@ -38,7 +38,10 @@ const Wishlist = () => {
                       <p className="font-bold">Stock</p>
                       <p className="text-gray-500">In Stock</p>
                     </div>
-                    <button className="absolute bottom-0  p-2 w-40 bg-red-500 hover:bg-red-600 rounded-t-md text-white">
+                    <button
+                      onClick={() => wishlistToCart(item)}
+                      className="absolute bottom-0  p-2 w-40 bg-red-500 hover:bg-red-600 rounded-t-md text-white"
+                    >
                       Add to cart
                     </button>
                   </div>
