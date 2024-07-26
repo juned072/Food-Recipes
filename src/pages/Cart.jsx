@@ -8,34 +8,67 @@ const Cart = () => {
   const { cart } = useContext(ContextApi);
 
   return (
-    <div className="md:max-w-screen-lg md:min-h-[80vh] md:mx-auto my-5 md:shadow-md md:rounded-md p-2">
-      <div className="bg-red-500 hover:bg-red-600 w-8 h-8 flex items-center justify-center rounded-full">
-        <Link to={"/"}>
-          <IoMdArrowRoundBack className="cursor-pointer text-white text-xl" />
-        </Link>
-      </div>
-      {cart.length === 0 ? (
-        <div className="flex flex-col justify-center items-center h-80">
-          <video
-            src={CartEmptyVideo}
-            autoPlay
-            loop
-            muted
-            className="w-60 h-60"
-          />
-          <p className="text-gray-700 font-semibold text-sm">
-            Your Cart is empty!
-          </p>
-        </div>
-      ) : (
-        <div className="flex flex-col justify-center items-center">
-          {cart.map((item) => (
-            <div>
-              <h2>{item.title}</h2>
+    <div className="md:max-w-screen-lg md:min-h-[80vh] h-[88vh] md:mx-auto md:my-5 md:shadow-xl md:rounded-lg overflow-hidden relative">
+      <div className="p-4 md:p-6 flex flex-col h-full">
+        <div className="flex items-center justify-between">
+          <Link to={"/"}>
+            <div className="bg-red-600 hover:bg-red-700 transition-colors duration-300 w-8 h-8 flex items-center justify-center rounded-full shadow-lg">
+              <IoMdArrowRoundBack className="text-white text-xl" />
             </div>
-          ))}
+          </Link>
+          <h1 className="text-xl font-semibold text-gray-800 ">
+            Shopping Cart
+          </h1>
         </div>
-      )}
+        <div className="flex-grow mt-4 overflow-auto">
+          {cart.length === 0 ? (
+            <div className="flex flex-col justify-center items-center h-full">
+              <video
+                src={CartEmptyVideo}
+                autoPlay
+                loop
+                muted
+                className="w-72 h-72 rounded-lg"
+              />
+              <p className="mt-4 text-gray-600 font-semibold">
+                Your Cart is empty!
+              </p>
+            </div>
+          ) : (
+            <div className="md:max-w-screen-md md:m-auto">
+              <div className="overflow-auto">
+                {cart.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between rounded-lg shadow-md mb-4"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-32 h-24 object-cover rounded-lg shadow-sm"
+                    />
+                    <div className="ml-4 flex-1">
+                      <h2 className="text-lg font-medium text-gray-800">
+                        {item.title}
+                      </h2>
+                      <p className="text-gray-500 mt-1">$ {item.price}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="w-full bg-gray-900 text-white p-4 mt-4 rounded-lg shadow-lg flex flex-col">
+          <div className="flex justify-between items-center">
+            <h2 className="text-lg font-semibold">Total Price:</h2>
+            <p className="text-xl font-bold">$200</p>
+          </div>
+          <button className="md:w-80 w-full bg-red-500 hover:bg-red-600 rounded-md p-2 mt-4">
+            Checkout
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
