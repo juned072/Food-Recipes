@@ -1,15 +1,22 @@
 import React, { useContext } from "react";
 import { ContextApi } from "../context/ContextApi";
+import { CiHeart } from "react-icons/ci";
 
 const Card = ({ item }) => {
-  const { addToCart } = useContext(ContextApi);
+  const { addToCart, addToWishlist } = useContext(ContextApi);
   return (
-    <div className="rounded-md overflow-hidden shadow-md bg-white">
+    <div className="rounded-md overflow-hidden shadow-md bg-white relative">
       <img
         src={item.image}
         alt={item.title}
         className="w-full h-40 object-cover"
       />
+      <span
+        onClick={() => addToWishlist(item)}
+        className="absolute z-40 top-2 right-1 text-xl text-red-500 bg-white rounded-full w-8 h-8 flex justify-center items-center cursor-pointer"
+      >
+        <CiHeart />
+      </span>
       <div className="p-2">
         <h3 className="text-lg text-gray-800 font-semibold">{item.title}</h3>
         <div className="flex justify-between items-center">
