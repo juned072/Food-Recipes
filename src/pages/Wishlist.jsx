@@ -29,7 +29,9 @@ const Wishlist = () => {
             muted
             className="w-72 h-72 rounded-lg"
           />
-          <p className="text-gray-600 font-semibold">Your Wishlist is empty!</p>
+          <p className="mt-4 text-gray-600 font-semibold">
+            Your Wishlist is empty!
+          </p>
         </div>
       ) : (
         <div className="max-w-screen-lg m-auto">
