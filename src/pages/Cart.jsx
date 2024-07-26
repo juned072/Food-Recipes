@@ -60,8 +60,8 @@ const Cart = () => {
           )}
         </div>
         <div className="w-full bg-gray-900 text-white p-4 mt-4 rounded-lg shadow-lg flex flex-col">
-          <div className="flex justify-between items-center">
-            <h2 className="text-lg font-semibold">Total Price:</h2>
+          <div className="flex justify-between md:justify-normal items-center border-b border-gray-500">
+            <h2 className="text-lg font-semibold md:mr-5 mr-0">Total Price:</h2>
             <p className="text-xl font-bold">$200</p>
           </div>
           <button className="md:w-80 w-full bg-red-500 hover:bg-red-600 rounded-md p-2 mt-4">
