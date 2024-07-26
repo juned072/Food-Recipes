@@ -3,6 +3,7 @@ import { ContextApi } from "../context/ContextApi";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import CartEmptyVideo from "../assets/cart-empty.mp4";
+import { MdDeleteOutline } from "react-icons/md";
 
 const Cart = () => {
   const { cart } = useContext(ContextApi);
@@ -40,18 +41,39 @@ const Cart = () => {
                 {cart.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between rounded-lg shadow-md mb-4"
+                    className="flex items-center justify-between rounded-lg shadow-md mb-4 border border-gray-50"
                   >
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-32 h-24 object-cover rounded-lg shadow-sm"
+                      className="w-28 h-24 object-cover rounded-lg shadow-sm"
                     />
                     <div className="ml-4 flex-1">
                       <h2 className="text-lg font-medium text-gray-800">
                         {item.title}
                       </h2>
-                      <p className="text-gray-500 mt-1">$ {item.price}</p>
+                      <p className="text-gray-500">{item.category}</p>
+                      <p className="text-red-500 font-semibold mt-1">
+                        $ {item.price}
+                      </p>
+                    </div>
+                    <div className="flex-1 md:flex-row flex-col flex items-center md:space-x-4 ">
+                      <button className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
+                        -
+                      </button>
+                      <p className="text-lg font-semibold">0</p>
+                      <button className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
+                        +
+                      </button>
+                    </div>
+
+                    <div>
+                      <button
+                        title="Remove from cart"
+                        className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300 rounded-md text-sm text-white p-2 mr-5"
+                      >
+                        <MdDeleteOutline />
+                      </button>
                     </div>
                   </div>
                 ))}
