@@ -21,17 +21,15 @@ const Wishlist = () => {
       </div>
 
       {wishlist.length === 0 ? (
-        <div className="flex flex-col justify-center items-center h-80">
+        <div className="flex flex-col justify-center items-center h-full">
           <video
             src={EmptyWishlist}
             autoPlay
             loop
             muted
-            className="w-60 h-60 rounded-lg"
+            className="w-72 h-72 rounded-lg"
           />
-          <p className="mt-4 text-gray-600 font-semibold">
-            Your wishlist is empty
-          </p>
+          <p className="text-gray-600 font-semibold">Your Wishlist is empty!</p>
         </div>
       ) : (
         <div className="max-w-screen-lg m-auto">
