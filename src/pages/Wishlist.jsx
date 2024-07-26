@@ -3,12 +3,13 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { ContextApi } from "../context/ContextApi";
 import { Link } from "react-router-dom";
+import EmptyWishlist from "../assets/wishlist-empty.mp4";
 
 const Wishlist = () => {
   const { wishlist, wishlistToCart, removeItemWishlist } =
     useContext(ContextApi);
   return (
-    <div className="max-w-screen-lg min-h-[80vh] mx-auto my-5 shadow-md rounded-md p-2 ">
+    <div className="md:max-w-screen-lg md:min-h-[80vh] md:mx-auto my-5 md:shadow-md md:rounded-md p-2 ">
       <div className="bg-red-500 hover:bg-red-600 w-8 h-8 flex items-center justify-center rounded-full">
         <Link to={"/"}>
           <IoMdArrowRoundBack className="cursor-pointer text-white text-xl" />
@@ -18,8 +19,15 @@ const Wishlist = () => {
         <h3 className="text-center text-2xl font-bold"> Wishlist</h3>
       </div>
       {wishlist.length === 0 ? (
-        <div className="flex justify-center items-center h-80">
-          <p>No wishlist item</p>
+        <div className="flex flex-col justify-center items-center h-80">
+          <video
+            src={EmptyWishlist}
+            autoPlay
+            loop
+            muted
+            className="w-60 h-60"
+          />
+          <p>Your wishlist is empty</p>
         </div>
       ) : (
         <div className="max-w-screen-md m-auto flex flex-wrap items-center md:justify-between justify-center gap-5 mt-8">
