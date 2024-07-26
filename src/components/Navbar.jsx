@@ -2,18 +2,21 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CiShoppingCart, CiHeart } from "react-icons/ci";
 import { ContextApi } from "../context/ContextApi";
+import pageIcon from "../assets/pageIcon.png";
+
 const Navbar = () => {
   const { cart } = useContext(ContextApi);
   const location = useLocation();
   return (
     <nav className="flex justify-between items-center p-4 shadow-md">
-      <div>
-        <Link to={"/"}>
+      <Link to={"/"}>
+        <div className="flex items-center justify-center space-x-2">
+          <img src={pageIcon} alt="icon" className="w-10" />
           <h1 className="md:text-3xl text-2xl font-bold text-slate-800">
-            Food Recipes
+            Food <span className="text-red-500">Recipes</span>
           </h1>
-        </Link>
-      </div>
+        </div>
+      </Link>
       <div className="md:block hidden">
         <Link to={"/"}>
           <button
