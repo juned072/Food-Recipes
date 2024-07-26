@@ -5,7 +5,8 @@ import { ContextApi } from "../context/ContextApi";
 import { Link } from "react-router-dom";
 
 const Wishlist = () => {
-  const { wishlist, wishlistToCart } = useContext(ContextApi);
+  const { wishlist, wishlistToCart, removeItemWishlist } =
+    useContext(ContextApi);
   return (
     <div className="max-w-screen-lg min-h-[80vh] mx-auto my-5 shadow-md rounded-md p-2 ">
       <div className="bg-red-500 hover:bg-red-600 w-8 h-8 flex items-center justify-center rounded-full">
@@ -46,7 +47,10 @@ const Wishlist = () => {
                     </button>
                   </div>
                 </div>
-                <div className="text-xl text-white bg-gray-400 rounded-full cursor-pointer absolute top-1 left-1">
+                <div
+                  onClick={() => removeItemWishlist(item)}
+                  className="text-xl text-white bg-gray-400 hover:bg-gray-500 rounded-full cursor-pointer absolute top-1 left-1"
+                >
                   <IoClose title="Remove from wishlist" />
                 </div>
               </div>

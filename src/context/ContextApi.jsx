@@ -19,9 +19,20 @@ const ContextProvider = ({ children }) => {
     setCart((prevCart) => [...prevCart, item]);
   };
 
+  const removeItemWishlist = (item) => {
+    setWishlist((prevWishlist) => prevWishlist.filter((i) => i.id !== item.id));
+  };
+
   return (
     <ContextApi.Provider
-      value={{ cart, addToCart, addToWishlist, wishlist, wishlistToCart }}
+      value={{
+        cart,
+        addToCart,
+        addToWishlist,
+        wishlist,
+        wishlistToCart,
+        removeItemWishlist,
+      }}
     >
       {children}
     </ContextApi.Provider>
