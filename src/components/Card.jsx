@@ -1,9 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
-import { CiHeart } from "react-icons/ci";
+import heartFill from "../assets/heart-fill.png";
+import heart from "../assets/heart.png";
 
 const Card = ({ item }) => {
-  const { addToCart, addToWishlist } = useContext(ContextApi);
+  const { addToCart, addToWishlist, removeItemWishlist, wishlist } =
+    useContext(ContextApi);
+  const [addedWishlist, setAddedWishlist] = useState(false);
+
+  useEffect(() => {
+    const isItemInWishlist = wishlist.some((i) => i.id === item.id);
+    setAddedWishlist(isItemInWishlist);
+  }, [wishlist, item.id]);
+
+  const handleWishlistClick = () => {
+    if (addedWishlist) {
+      removeItemWishlist(item);
+    } else {
+      addToWishlist(item);
+    }
+    setAddedWishlist(!addedWishlist);
+  };
+
   return (
     <div className="rounded-md overflow-hidden shadow-md bg-white relative">
       <img
@@ -12,10 +30,10 @@ const Card = ({ item }) => {
         className="w-full h-40 object-cover"
       />
       <span
-        onClick={() => addToWishlist(item)}
-        className="absolute z-40 top-2 right-1 text-xl text-red-500 bg-white rounded-full w-8 h-8 flex justify-center items-center cursor-pointer"
+        onClick={handleWishlistClick}
+        className="absolute z-40 top-2 right-1 bg-white rounded-full w-8 h-8 flex justify-center items-center cursor-pointer"
       >
-        <CiHeart />
+        <img src={addedWishlist ? heart : heartFill} className="w-5 h-5" />
       </span>
       <div className="p-2">
         <h3 className="text-lg text-gray-800 font-semibold">{item.title}</h3>
