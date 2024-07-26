@@ -51,12 +51,12 @@ const Navbar = () => {
       </div>
       <div className="md:hidden block">
         <Link to={"/wishlist"}>
-          <button className="mr-4 text-3xl">
+          <button className="mr-4 text-3xl ">
             <CiHeart />
           </button>
         </Link>
         <Link to={"/cart"} className="relative">
-          <button className="text-3xl">
+          <button className="text-3xl ">
             <CiShoppingCart />
           </button>
           {cart.length > 0 && (
