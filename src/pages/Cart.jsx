@@ -6,7 +6,7 @@ import CartEmptyVideo from "../assets/cart-empty.mp4";
 import { MdDeleteOutline } from "react-icons/md";
 
 const Cart = () => {
-  const { cart } = useContext(ContextApi);
+  const { cart, removeItemCart } = useContext(ContextApi);
 
   return (
     <div className="md:max-w-screen-lg md:min-h-[80vh] h-[88vh] md:mx-auto md:my-5 md:shadow-xl md:rounded-lg overflow-hidden relative">
@@ -69,6 +69,7 @@ const Cart = () => {
 
                     <div>
                       <button
+                        onClick={() => removeItemCart(item)}
                         title="Remove from cart"
                         className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300 rounded-md text-sm text-white p-2 mr-5"
                       >
