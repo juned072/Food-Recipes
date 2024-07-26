@@ -15,7 +15,6 @@ const ContextProvider = ({ children }) => {
   };
 
   const wishlistToCart = (item) => {
-    setWishlist((prevWishlist) => prevWishlist.filter((i) => i.id !== item.id));
     setCart((prevCart) => [...prevCart, item]);
   };
 
