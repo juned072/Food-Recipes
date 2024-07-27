@@ -67,6 +67,8 @@ const ContextProvider = ({ children }) => {
         wishlistToCart,
         removeItemWishlist,
         removeItemCart,
+        increaseItem,
+        decreaseItem,
       }}
     >
       {children}
