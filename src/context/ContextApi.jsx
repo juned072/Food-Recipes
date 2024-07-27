@@ -26,7 +26,18 @@ const ContextProvider = ({ children }) => {
   };
 
   const wishlistToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]);
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((i) => i.id === item.id);
+      if (existingItem) {
+        return prevCart.map((i) =>
+          i.id === item.id
+            ? { ...i, qty: i.qty + 1, total: (i.qty + 1) * i.price }
+            : i
+        );
+      } else {
+        return [...prevCart, { ...item, qty: 1, total: item.price }];
+      }
+    });
   };
 
   const removeItemWishlist = (item) => {
