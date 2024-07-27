@@ -57,6 +57,10 @@ const ContextProvider = ({ children }) => {
     });
   };
 
+  const totalItemPrice = () => {
+    return cart.reduce((total, item) => total + item.qty * item.price, 0);
+  };
+
   return (
     <ContextApi.Provider
       value={{
@@ -69,6 +73,7 @@ const ContextProvider = ({ children }) => {
         removeItemCart,
         increaseItem,
         decreaseItem,
+        totalItemPrice,
       }}
     >
       {children}
