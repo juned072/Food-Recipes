@@ -6,7 +6,8 @@ import CartEmptyVideo from "../assets/cart-empty.mp4";
 import { MdDeleteOutline } from "react-icons/md";
 
 const Cart = () => {
-  const { cart, removeItemCart } = useContext(ContextApi);
+  const { cart, removeItemCart, increaseItem, decreaseItem } =
+    useContext(ContextApi);
 
   return (
     <div className="md:max-w-screen-lg md:min-h-[80vh] h-[88vh] md:mx-auto md:my-5 md:shadow-xl md:rounded-lg overflow-hidden relative">
@@ -58,11 +59,17 @@ const Cart = () => {
                       </p>
                     </div>
                     <div className="flex-1 md:flex-row flex-col flex items-center md:space-x-4 ">
-                      <button className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
+                      <button
+                        onClick={() => decreaseItem(item.id)}
+                        className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300"
+                      >
                         -
                       </button>
-                      <p className="text-lg font-semibold">0</p>
-                      <button className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
+                      <p className="text-lg font-semibold">{item.qty}</p>
+                      <button
+                        onClick={() => increaseItem(item.id)}
+                        className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300"
+                      >
                         +
                       </button>
                     </div>
