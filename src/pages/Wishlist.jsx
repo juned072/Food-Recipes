@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { IoBagHandleOutline } from "react-icons/io5";
 import { ContextApi } from "../context/ContextApi";
 import { Link } from "react-router-dom";
 import EmptyWishlist from "../assets/wishlist-empty.mp4";
@@ -56,8 +57,9 @@ const Wishlist = () => {
                     </div>
                     <button
                       onClick={() => wishlistToCart(item)}
-                      className="mt-4 p-2 bg-red-500 hover:bg-red-600 rounded-md text-white"
+                      className="flex justify-center items-center mt-4 p-2 text-sm bg-red-500 hover:bg-red-600 rounded-md text-white"
                     >
+                      <IoBagHandleOutline className="md:mr-2 mr-1 text-lg" />
                       Add to cart
                     </button>
                   </div>

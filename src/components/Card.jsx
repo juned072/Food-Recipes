@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
 import heartFill from "../assets/heart-fill.png";
 import heart from "../assets/heart.png";
+import { IoBagHandleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const Card = ({ item }) => {
@@ -54,9 +55,9 @@ const Card = ({ item }) => {
         </p>
         <button
           onClick={() => addToCart(item)}
-          className="bg-red-500 hover:bg-red-600 text-white p-1 rounded-md w-full mt-1"
+          className="flex items-center justify-center bg-red-500 hover:bg-red-600 text-white p-1 rounded-md w-full mt-1"
         >
-          Add to Cart
+          <IoBagHandleOutline className="mr-2 text-lg" /> Add to Cart
         </button>
       </div>
     </div>

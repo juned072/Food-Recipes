@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ContextApi } from "../context/ContextApi";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import CartEmptyVideo from "../assets/cart-empty.mp4";
 import { MdDeleteOutline } from "react-icons/md";
@@ -94,8 +95,8 @@ const Cart = () => {
             <h2 className="text-lg font-semibold md:mr-5 mr-0">Total Price:</h2>
             <p className="text-xl font-bold">${totalItemPrice()} </p>
           </div>
-          <button className="md:w-80 w-full bg-red-500 hover:bg-red-600 rounded-md p-2 mt-4">
-            Checkout
+          <button className="flex justify-center items-center md:w-80 w-full bg-red-500 hover:bg-red-600 rounded-md p-2 mt-4">
+            <CiShoppingCart className="mr-2 text-xl" /> Checkout
           </button>
         </div>
       </div>
