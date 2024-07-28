@@ -42,7 +42,7 @@ const FoodDetails = () => {
         <div className="md:w-1/2">
           <h3 className="text-2xl font-semibold py-2">{item.title}</h3>
           <p className="block mb-2">
-            <span className="mr-1">Rating:</span> {item.rating} (10k)
+            <span className="mr-1">Rating:</span> {item.rating}
           </p>
           <p className="mb-2">
             <span className="mr-1">Availability:</span>

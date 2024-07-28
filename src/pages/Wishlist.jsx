@@ -10,7 +10,7 @@ const Wishlist = () => {
     useContext(ContextApi);
 
   return (
-    <div className="md:max-w-screen-lg md:min-h-[80vh] md:mx-auto md:my-5 md:shadow-md md:rounded-md md:p-6 p-4">
+    <div className="md:max-w-screen-lg md:min-h-[80vh] md:mx-auto md:my-5 md:p-6 p-4">
       <div className="flex items-center justify-between mb-4">
         <Link to={"/"}>
           <div className="bg-red-600 hover:bg-red-700 transition-colors duration-300 w-8 h-8 flex items-center justify-center rounded-full shadow-lg">

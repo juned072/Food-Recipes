@@ -10,7 +10,7 @@ const Cart = () => {
     useContext(ContextApi);
 
   return (
-    <div className="md:max-w-screen-lg md:min-h-[80vh] h-[88vh] md:mx-auto md:my-5 md:shadow-xl md:rounded-lg overflow-hidden relative">
+    <div className="md:max-w-screen-lg md:min-h-[80vh] h-[88vh] md:mx-auto md:my-5 relative">
       <div className="p-4 md:p-6 flex flex-col h-full">
         <div className="flex items-center justify-between">
           <Link to={"/"}>
