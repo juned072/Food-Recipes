@@ -26,7 +26,7 @@ const FoodDetails = () => {
   return (
     <div className="max-w-screen-lg mx-auto p-5">
       {!item ? (
-        <div className="flex justify-center items-center h-96">
+        <div className="flex justify-center items-center h-[80vh]">
           <PulseLoader
             color="#f42222"
             margin={5}
@@ -59,9 +59,9 @@ const FoodDetails = () => {
               <p className="mb-2">
                 <span className="mr-1">Availability:</span>
                 <span
-                  className={item.inStock ? "text-green-600" : "text-red-600"}
+                  className={item.inStock ? "text-red-600" : "text-green-600"}
                 >
-                  {item.inStock ? "In Stock" : "Out of Stock"}
+                  {item.inStock ? "Out of Stock" : "In Stock"}
                 </span>
               </p>
               <p className="mb-2">
@@ -70,7 +70,7 @@ const FoodDetails = () => {
               </p>
               <p className="mb-4">
                 Price:
-                <span className="text-xl font-bold text-red-500">
+                <span className="text-xl font-bold text-red-500 ml-1">
                   ${item.price}
                 </span>
               </p>
