@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
 import heartFill from "../assets/heart-fill.png";
 import heart from "../assets/heart.png";
+import { Link } from "react-router-dom";
 
 const Card = ({ item }) => {
   const { addToCart, addToWishlist, removeItemWishlist, wishlist } =
@@ -45,9 +46,11 @@ const Card = ({ item }) => {
         </div>
         <p className="mt-1 text-gray-500 text-sm">
           {item.description.slice(0, 50)}
-          <span className="text-red-400 hover:text-red-600 cursor-pointer ml-1">
-            Read more...
-          </span>
+          <Link to={`/foodOverview/${item.id}`}>
+            <span className="text-red-400 hover:text-red-600 cursor-pointer ml-1">
+              Read more...
+            </span>
+          </Link>
         </p>
         <button
           onClick={() => addToCart(item)}
