@@ -32,7 +32,6 @@ const ContextProvider = ({ children }) => {
 
   const wishlistToCart = (item) => {
     addToCart(item);
-    removeItemWishlist(item);
   };
 
   const removeItemWishlist = (item) => {
