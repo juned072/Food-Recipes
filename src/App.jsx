@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import { ContextProvider } from "./context/ContextApi";
+import FoodDetails from "./pages/FoodDetails";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/foodOverview/:id" element={<FoodDetails />} />
         </Routes>
       </Router>
     </ContextProvider>
