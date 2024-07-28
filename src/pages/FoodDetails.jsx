@@ -9,8 +9,7 @@ import { ContextApi } from "../context/ContextApi";
 const FoodDetails = () => {
   const { id } = useParams();
   const [item, setItem] = useState(null);
-  const { increaseItem, decreaseItem, addToCart, addToWishlist } =
-    useContext(ContextApi);
+  const { addToCart, addToWishlist } = useContext(ContextApi);
 
   const getItemById = (id) => {
     return data.find((item) => item.id === parseInt(id));
@@ -20,10 +19,6 @@ const FoodDetails = () => {
     const fetchedItem = getItemById(id);
     setItem(fetchedItem);
   }, [id]);
-
-  if (!item) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="max-w-screen-lg mx-auto p-5">
