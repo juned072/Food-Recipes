@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import data from "../database/Data";
 import { Link, useParams } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
+import { ContextApi } from "../context/ContextApi";
 
 const FoodDetails = () => {
   const { id } = useParams();
   const [item, setItem] = useState(null);
+  const { increaseItem, decreaseItem, addToCart, addToWishlist } =
+    useContext(ContextApi);
 
   const getItemById = (id) => {
     return data.find((item) => item.id === parseInt(id));
@@ -54,27 +57,23 @@ const FoodDetails = () => {
             Category:<span className="ml-1 text-gray-500">{item.category}</span>
           </p>
           <p className="mb-4">
-            Price:{" "}
+            Price:
             <span className="text-xl font-bold text-red-500">
               ${item.price}
             </span>
           </p>
           <p className="mb-4 text-gray-800">{item.description}</p>
-          <p className="text-gray-800 mb-2">Quantity :</p>
-          <div className="flex items-center space-x-4 mb-4">
-            <button className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
-              -
-            </button>
-            <p className="text-lg font-semibold text-black">{item.qty}</p>
-            <button className="bg-red-500 w-8 h-8 flex items-center justify-center text-white rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300">
-              +
-            </button>
-          </div>
           <div className="flex space-x-4">
-            <button className="flex items-center bg-purple-800 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition-all duration-300">
+            <button
+              onClick={() => addToWishlist(item)}
+              className="flex items-center bg-purple-800 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition-all duration-300"
+            >
               <CiHeart className="mr-2" /> Wishlist
             </button>
-            <button className="flex items-center bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-all duration-300">
+            <button
+              onClick={() => addToCart(item)}
+              className="flex items-center bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-all duration-300"
+            >
               <IoBagHandleOutline className="mr-2" /> Add to Cart
             </button>
           </div>

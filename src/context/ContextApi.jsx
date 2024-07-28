@@ -22,22 +22,17 @@ const ContextProvider = ({ children }) => {
   };
 
   const addToWishlist = (item) => {
-    setWishlist((prevWishlist) => [...prevWishlist, item]);
+    setWishlist((prevWishlist) => {
+      if (prevWishlist.find((i) => i.id === item.id)) {
+        return prevWishlist;
+      }
+      return [...prevWishlist, item];
+    });
   };
 
   const wishlistToCart = (item) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((i) => i.id === item.id);
-      if (existingItem) {
-        return prevCart.map((i) =>
-          i.id === item.id
-            ? { ...i, qty: i.qty + 1, total: (i.qty + 1) * i.price }
-            : i
-        );
-      } else {
-        return [...prevCart, { ...item, qty: 1, total: item.price }];
-      }
-    });
+    addToCart(item);
+    removeItemWishlist(item);
   };
 
   const removeItemWishlist = (item) => {
