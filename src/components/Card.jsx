@@ -26,11 +26,13 @@ const Card = ({ item }) => {
 
   return (
     <div className="rounded-md overflow-hidden shadow-md bg-white relative">
-      <img
-        src={item.image}
-        alt={item.title}
-        className="w-full h-40 object-cover"
-      />
+      <Link to={`/foodOverview/${item.id}`}>
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-40 object-cover"
+        />
+      </Link>
       <span
         onClick={handleWishlistClick}
         className="absolute z-40 top-2 right-1 bg-white rounded-full w-8 h-8 flex justify-center items-center cursor-pointer"
@@ -38,7 +40,9 @@ const Card = ({ item }) => {
         <img src={addedWishlist ? heart : heartFill} className="w-5 h-5" />
       </span>
       <div className="p-2">
-        <h3 className="text-lg text-gray-800 font-semibold">{item.title}</h3>
+        <Link to={`/foodOverview/${item.id}`}>
+          <h3 className="text-lg text-gray-800 font-semibold">{item.title}</h3>
+        </Link>
         <div className="flex justify-between items-center">
           <span>{item.rating}</span>
           <span className="text-lg text-red-500 font-semibold">
