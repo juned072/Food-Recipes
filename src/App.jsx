@@ -6,12 +6,14 @@ import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import { ContextProvider } from "./context/ContextApi";
 import FoodDetails from "./pages/FoodDetails";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <ContextProvider>
       <Router>
         <Navbar />
+        <Toaster />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/wishlist" element={<Wishlist />} />
