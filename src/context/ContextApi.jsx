@@ -56,7 +56,6 @@ const ContextProvider = ({ children }) => {
           : i
       );
     });
-    toast.success("Item quantity increased");
   };
 
   const decreaseItem = (item) => {
@@ -67,7 +66,6 @@ const ContextProvider = ({ children }) => {
           : i
       );
     });
-    toast.success("Item quantity decreased");
   };
 
   const totalItemPrice = () => {
