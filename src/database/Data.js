@@ -107,7 +107,7 @@ const Data = [
         "price": 11,
         "description": "Indulge in the rich and savory flavors of our Shrimp Scampi. This features shrimp, garlic sauce, and mozzarella on a crispy crust. The dough is kneaded and allowed to rise, then rolled out to a thin base. A creamy garlic sauce is spread over the dough, followed by succulent shrimp and mozzarella cheese. The is baked until the cheese is melted and the crust is golden and crisp. Each bite is a delicious blend of garlic and shrimp flavors.",
         "category": "Non-veg",
-        "stock": ture,
+        "stock": true,
     },
     {
         "id": 13,
@@ -117,7 +117,7 @@ const Data = [
         "price": 93,
         "description": "Delight in the fresh and creamy flavors of our Spinach & Ricotta. This features fresh spinach and ricotta cheese on a crispy crust. The dough is kneaded and left to rise, then rolled out to a thin base. A rich tomato sauce is spread over the dough, followed by fresh spinach leaves and dollops of ricotta cheese. The is baked until the cheese is melted and the crust is golden and crisp. Each bite is a celebration of fresh and creamy flavors.",
         "category": "veg",
-        "stock": ture,
+        "stock": true,
     },
     {
         "id": 14,
@@ -127,7 +127,7 @@ const Data = [
         "price": 130,
         "description": "Indulge in the luxurious flavors of our Truffle Special. This features truffle oil, mushrooms, and mozzarella on a crispy crust. The dough is prepared and left to rise, then rolled out to a thin base. A generous drizzle of truffle oil is spread over the dough, followed by sautéed mushrooms and mozzarella cheese. The is baked until the cheese is melted and the crust is golden and crisp. Each bite delivers a rich and aromatic truffle experience.",
         "category": "veg",
-        "stock": ture,
+        "stock": true,
     },
     {
         "id": 15,
