@@ -52,8 +52,14 @@ const Wishlist = () => {
                     <h3 className="font-semibold text-lg">{item.title}</h3>
                     <p className="font-semibold text-red-500">${item.price}</p>
                     <div className="flex justify-between items-center mt-2">
-                      <p className="font-bold">Stock</p>
-                      <p className="text-gray-500">In Stock</p>
+                      <p className="font-bold">Stock:</p>
+                      <span
+                        className={
+                          item.stock ? "text-green-600" : "text-red-600"
+                        }
+                      >
+                        {item.stock ? "In Stock" : "Out of Stock "}
+                      </span>
                     </div>
                     <button
                       onClick={() => wishlistToCart(item)}

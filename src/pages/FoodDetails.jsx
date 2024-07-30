@@ -59,9 +59,9 @@ const FoodDetails = () => {
               <p className="mb-2">
                 <span className="mr-1">Availability:</span>
                 <span
-                  className={item.stock ? "text-red-600" : "text-green-600"}
+                  className={item.stock ? "text-green-600" : "text-red-600"}
                 >
-                  {item.stock ? "Out of Stock" : "In Stock"}
+                  {item.stock ? "In Stock" : "Out of Stock "}
                 </span>
               </p>
               <p className="mb-2">
