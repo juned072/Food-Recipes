@@ -24,9 +24,9 @@ const Recommended = ({ setFilter, filter }) => {
         Veg
       </button>
       <button
-        onClick={() => setFilter("non-veg")}
+        onClick={() => setFilter("Non-veg")}
         className={`${
-          filter === "non-veg"
+          filter === "Non-veg"
             ? "bg-red-500 text-white"
             : "hover:bg-red-500 hover:text-white"
         } p-2 mx-2 rounded-md border`}
